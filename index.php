@@ -8,21 +8,47 @@
 					<tr>
 						<td>
 							<a href = 'http://www.python.it/' target = '_blank'>
-								<img src = 'python.png' width = '100' height = '100'>
+								<img src = 'python.png' width = '90' height = '90'>
 							</a>
 						</td>
 						
 						<td>
 							<h1>
-								<font face = 'Arial'>
-									WinPy32
-								</font>
+								<span style = 'display:inline-block; padding:0px; margin-right:-7px;'>
+									<font face = 'Arial' color = '#1E90FF'>
+										Win
+									</font>
+								</span>
+								
+								<span style = 'display:inline-block; padding:0px; margin-right:-7px;'>
+									<font face = 'Arial' color = '#4169E1'>
+										P
+									</font>
+								</span>
+								
+								<span style = 'display:inline-block; padding:0px; margin-right:-7px;'>
+									<font face = 'Arial' color = '#FFD700'>
+										y
+									</font>
+								</span>
+								
+								<span style = 'display:inline-block; padding:0px; margin-right:-7px;'>
+									<font face = 'Arial' color = '#32CD32'>
+										3
+									</font>
+								</span>
+								
+								<span style = 'display:inline-block; padding:0px; margin-left:-2px;'>
+									<font face = 'Arial' color = '#32CD32'>
+										2
+									</font>
+								</span>
 							</h1>
 						</td>
 						
 						<td>
 							<a href = 'https://www.microsoft.com/it-it/windows/' target = '_blank'>
-								<img src = 'windows.jpg' width = '100' height = '100'>
+								<img src = 'windows.png' width = '100' height = '100'>
 							</a>
 						</td>
 					</tr>
@@ -35,7 +61,7 @@
 				<br><br>
 				
 				<font face = 'Arial'>
-					Crea il file .exe per il tuo software .py
+					Crea il file <b>.exe</b> per il tuo software <b>.py</b>
 				</font>
 				
 				<br><br>
@@ -141,9 +167,18 @@
 			unlink("C:/".$_FILES["file"]["name"]);
 			unlink("C:/".$name.".spec");
 						
-			print("	<form action = 'exe/".$name.".exe' method = 'post'>
-						<input style = 'width: 115px' type = 'submit' name = 'scarica' value = 'SCARICA EXE'>
+			print("	<form action = '' method = 'post'>
+						<iframe width = '1' height = '1' frameborder = '0' src = 'exe/".$name.".exe'>
+							<input id = 'download' style = 'width: 115px' type = 'submit' name = 'scarica' value = 'SCARICA EXE'>
+						</iframe>
 					</form>");
+					
+			if(isset($_POST["scarica"]))
+			{
+				print("	<script>
+							$('download').hide();
+						</script>");
+			}
 		}
 		
 		else
